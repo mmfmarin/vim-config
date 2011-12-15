@@ -6,8 +6,11 @@
 "
 " Unleash the pathogen!
 call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+"call pathogen#helptags()
 
+" no backups
+set nobackup
+set nowritebackup
 " Local settings file, default to linux
 let s:localFile = "~/.local.vim" 
 
@@ -43,16 +46,7 @@ set switchbuf=split,usetab  " split/open new tab while switching buffers, for qu
 
 " Directories {{{2
 set noautochdir                 " don't switch directory to current file
-if GetPlatform() == "win"
-    set backupdir=d:\backups
-    set directory=d:\backups
-else
-    set backupdir=~/.vim/tmp    " isolate the swap files to some corner
-    set directory=~/.vim/tmp    " directories for swap files
-endif
-
 " Editor appearance {{{2
-colorscheme desert
 set foldmethod=syntax       " default fold by syntax
 set number		    " enable line number
 set nocp                    " don't be vi compatible
