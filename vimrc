@@ -258,6 +258,14 @@ map <leader>gc :Gcommit<CR>
 map <leader>gp :Git push<CR>
 map <leader>gl :Git pull<CR>
 
+" Solarized {{{2
+set background=dark
+let g:solarized_termtrans=1
+let g:solarized_termcolors=256
+let g:solarized_contrast="high"
+let g:solarized_visibility="high"
+
+colorscheme solarized
 " Extensions and utils {{{1
 "
 " Enable camelCase text navigation {{{2
