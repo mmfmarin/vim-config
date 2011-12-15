@@ -62,6 +62,16 @@ set visualbell              " oh no beeps please!
 
 " Key mappings in general {{{2
 nmap <silent><S-Tab> :tabnext<CR>
+" Mappings: hard to type
+" Professor VIM says '87% of users prefer jj over esc', jj abrams disagrees
+imap jj <Esc>
+imap uu _
+imap hh =>
+imap aa @
+imap ç `
+imap ¡¡ ^^
+" Map ++ to save current file
+noremap ++ :w <cr>
 
 " Search {{{2
 set incsearch               " use incremental search
