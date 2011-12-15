@@ -240,6 +240,14 @@ let g:vimwiki_dir_link = 'index'
 map <S-Down> <Plug>VimwikiNextLink
 map <S-Up> <Plug>VimwikiPrevLink
 
+" Fugitive {{{2
+map <leader>gs :Gstatus<CR>
+map <leader>gd :Gdiff<CR>
+map <leader>g+ :Gwrite<CR>
+map <leader>gc :Gcommit<CR>
+map <leader>gp :Git push<CR>
+map <leader>gl :Git pull<CR>
+
 " Extensions and utils {{{1
 "
 " Enable camelCase text navigation {{{2
