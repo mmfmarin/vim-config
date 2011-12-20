@@ -11,6 +11,7 @@ call pathogen#runtime_append_all_bundles()
 " no backups
 set nobackup
 set nowritebackup
+set noswapfile
 " Local settings file, default to linux
 let s:localFile = "~/.local.vim" 
 
@@ -61,6 +62,7 @@ set winheight=99999 winminheight=0  " rolodex look for vim
 set visualbell              " oh no beeps please!
 
 " Key mappings in general {{{2
+let mapleader=","
 nmap <silent><S-Tab> :tabnext<CR>
 " Mappings: hard to type
 " Professor VIM says '87% of users prefer jj over esc', jj abrams disagrees
@@ -72,6 +74,19 @@ imap ç `
 imap ¡¡ ^^
 " Map ++ to save current file
 noremap ++ :w <cr>
+" Invisible characters
+set listchars=trail:.,tab:>-,eol:$
+set nolist
+:noremap ,i :set list!<CR> " Toggle invisible chars
+" Cursor Movement
+" Make cursor move by visual lines instead of file lines (when wrapping)
+map <up> gk
+map k gk
+imap <up> <C-o>gk
+map <down> gj
+map j gj
+imap <down> <C-o>gj
+map E ge
 
 " Search {{{2
 set incsearch               " use incremental search
@@ -88,6 +103,24 @@ set tabstop=8               " defacto tab standard
 " Tags {{{2
 set sft                     " show full tags while autocompleting
 set tags=tags,./tags,../,../..
+
+" Windows {{{2
+set equalalways " Multiple windows, when created, are equal in size
+set splitbelow splitright
+
+"Vertical split then hop to new buffer
+:noremap ,v :vsp^M^W^W<cr>
+:noremap ,h :split^M^W^W<cr>
+
+" Cursor Movement {{{2
+" Make cursor move by visual lines instead of file lines (when wrapping)
+map <up> gk
+map k gk
+imap <up> <C-o>gk
+map <down> gj
+map j gj
+imap <down> <C-o>gj
+map E ge
 
 " Misc {{{2
 filetype plugin on          " enable plugin support
