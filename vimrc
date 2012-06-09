@@ -306,11 +306,12 @@ map <leader>gp :Git push<CR>
 map <leader>gl :Git pull<CR>
 
 " Solarized {{{2
+se t_Co=256
 set background=dark
 let g:solarized_termtrans=1
 let g:solarized_termcolors=256
-let g:solarized_contrast="high"
-let g:solarized_visibility="high"
+let g:solarized_contrast="normal"
+let g:solarized_visibility="normal"
 
 colorscheme solarized
 " Extensions and utils {{{1
