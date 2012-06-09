@@ -92,6 +92,7 @@ map E ge
 set incsearch               " use incremental search
 set whichwrap=<,>,h,l,[,]]  " set wrapping at the end of line 
 set wrapscan                " wrap the search
+set smartcase               " use case sensitive searches when needed
 
 " Tabs and Indentation {{{2
 set cindent                 " support c indenting style
