@@ -145,6 +145,19 @@ if GetPlatform() == "win"
     au FileType c,cpp set errorformat=%f(%l)\ :\ error\ C%n:\ %m
 endif
 
+" js {{{2
+" Folding : http://vim.wikia.com/wiki/Syntax-based_folding, see comment by Ostrygen
+"au FileType cs set omnifunc=syntaxcomplete#Complete
+au FileType js set foldmethod=indent
+au FileType js set foldmarker={,} 
+au FileType js set foldtext=substitute(getline(v:foldstart+1),'{.*','{...}',)
+au FileType js set foldlevelstart=4
+" Quickfix mode: command line msbuild error format
+if GetPlatform() == "win"
+    au FileType cs set errorformat=\ %#%f(%l\\\,%c):\ error\ CS%n:\ %m
+endif
+au FileType js setlocal expandtab shiftwidth=4 softtabstop=4 tabstop=4
+
 " C# {{{2
 " Folding : http://vim.wikia.com/wiki/Syntax-based_folding, see comment by Ostrygen
 "au FileType cs set omnifunc=syntaxcomplete#Complete
