@@ -96,10 +96,10 @@ set smartcase               " use case sensitive searches when needed
 
 " Tabs and Indentation {{{2
 set cindent                 " support c indenting style
-set expandtab		    " use spaces for indentation
-set softtabstop=4           " replace tabs with 4 spaces
-set shiftwidth=4	    " for inserting spaces with S-<< and S->>
-set tabstop=8               " defacto tab standard
+"set expandtab		    " use spaces for indentation
+"set softtabstop=4           " replace tabs with 4 spaces
+"set shiftwidth=4	    " for inserting spaces with S-<< and S->>
+"set tabstop=8               " defacto tab standard
 
 " Tags {{{2
 set sft                     " show full tags while autocompleting
@@ -151,7 +151,7 @@ endif
 au FileType cs set foldmethod=indent
 au FileType cs set foldmarker={,} 
 au FileType cs set foldtext=substitute(getline(v:foldstart+1),'{.*','{...}',)
-au FileType cs set foldlevelstart=3
+au FileType cs set foldlevelstart=4
 " Quickfix mode: command line msbuild error format
 if GetPlatform() == "win"
     au FileType cs set errorformat=\ %#%f(%l\\\,%c):\ error\ CS%n:\ %m
@@ -177,7 +177,7 @@ let php_folding=1           " enable folding for classes and functions
 
 " php pear coding guidelines
 " http://wiki.geeklog.net/wiki/index.php/Coding_Guidelines#Indenting_and_Line_Length
-au FileType php setlocal expandtab shiftwidth=4 softtabstop=4 tabstop=4
+au FileType php setlocal noexpandtab shiftwidth=4 softtabstop=4 tabstop=4
  
 " Powershell {{{2
 au BufRead,BufNewFile *.ps1 set ft=ps1
