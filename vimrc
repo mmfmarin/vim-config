@@ -95,7 +95,7 @@ set wrapscan                " wrap the search
 set smartcase               " use case sensitive searches when needed
 
 " Tabs and Indentation {{{2
-set cindent                 " support c indenting style
+set smartindent
 "set expandtab		    " use spaces for indentation
 "set softtabstop=4           " replace tabs with 4 spaces
 "set shiftwidth=4	    " for inserting spaces with S-<< and S->>
@@ -156,7 +156,7 @@ au FileType js set foldlevelstart=4
 if GetPlatform() == "win"
     au FileType cs set errorformat=\ %#%f(%l\\\,%c):\ error\ CS%n:\ %m
 endif
-au FileType js setlocal expandtab shiftwidth=4 softtabstop=4 tabstop=4
+au FileType js setlocal noexpandtab noautoindent nocindent nosmartindent shiftwidth=4 softtabstop=4 tabstop=4
 
 " C# {{{2
 " Folding : http://vim.wikia.com/wiki/Syntax-based_folding, see comment by Ostrygen
@@ -190,6 +190,7 @@ let php_folding=1           " enable folding for classes and functions
 
 " php pear coding guidelines
 " http://wiki.geeklog.net/wiki/index.php/Coding_Guidelines#Indenting_and_Line_Length
+" Notice 'noexpandtab' for using tabs instead of spaces
 au FileType php setlocal noexpandtab shiftwidth=4 softtabstop=4 tabstop=4
  
 " Powershell {{{2
@@ -234,6 +235,10 @@ au FileType vimwiki let tlist_vimwiki_settings = 'wiki;h:Headers'
 
 " XML {{{2
 au FileType xml setlocal et sw=2 sts=2 ts=2 ai
+" html {{{2
+let g:html_indent_inctags = "html,body,head,tbody"
+let g:html_indent_script1 = "inc"
+let g:html_indent_style1 = "inc"
 
 " Misc {{{2
 " Change the working directory to the directory containing the current file
