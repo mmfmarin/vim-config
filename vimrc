@@ -92,7 +92,7 @@ map E ge
 set incsearch               " use incremental search
 set whichwrap=<,>,h,l,[,]]  " set wrapping at the end of line 
 set wrapscan                " wrap the search
-set smartcase               " use case sensitive searches when needed
+set ignorecase              " use case insensitive searches
 
 " Tabs and Indentation {{{2
 set smartindent
@@ -136,7 +136,7 @@ filetype plugin indent on
 nmap <silent><F9> :make<cr>
 nmap <silent><F10> :cl<cr>
 nmap <silent><F11> :cp<cr>
-nmap <silent><F12> :cn<cr>
+"nmap <silent><F12> :cn<cr>
 
 " C/C++ {{{2
 au FileType cc,cpp map <F8> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
@@ -279,9 +279,9 @@ let g:pandoc_auto_format = 1    " auto format the text, can be slow!
 
 " PyUnit {{{2
 let g:PyUnitCmd = "nosetests -q --with-machineout --with-doctest"
-nnoremap <silent> <F5> :call PyUnitRunTests()<CR>
-nnoremap <silent> <S-F5> :call PyUnitRunAllTests()<CR>
-nnoremap <silent> <F6> :call PyUnitSwitchToCounterpart()<CR>
+"nnoremap <silent> <F5> :call PyUnitRunTests()<CR>
+"nnoremap <silent> <S-F5> :call PyUnitRunAllTests()<CR>
+"nnoremap <silent> <F6> :call PyUnitSwitchToCounterpart()<CR>
 
 " Tagbar {{{2
 " Settings for tagbar.vim
